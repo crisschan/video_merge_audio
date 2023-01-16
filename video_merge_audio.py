@@ -13,7 +13,7 @@ from moviepy.editor import *
 
 class VideoMergeAudio(object):
     
-    def __init__(self,video_file,audio_file,duration_flag = 0) -> None:
+    def __init__(self,video_file,audio_file,out_file_path='video_merge_audio.mp4',duration_flag = 0) -> None:
         '''
         @des  :构造函数
         @params  :
@@ -26,6 +26,7 @@ class VideoMergeAudio(object):
         self.video_file = video_file
         self.audio_file = audio_file
         self.duration_flag = duration_flag
+        self.out_file_path=out_file_path
         pass
     def merge(self):
         '''
@@ -43,7 +44,7 @@ class VideoMergeAudio(object):
             final_clip = video_clip.set_audio(audio_clip).set_duration(video_clip.duration)
         else:
             final_clip = video_clip.set_audio(audio_clip).set_duration(audio_clip.duration)
-        final_clip.write_videofile(self.video_file[:-4]+'_merge.mp4')
+        final_clip.write_videofile(self.out_file_path)
 
 
 if __name__ == '__main__':
