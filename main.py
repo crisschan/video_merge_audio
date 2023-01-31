@@ -9,11 +9,11 @@ from remover import Remover
 input_path = '/Users/crisschan/workspace/PySpace/video_merge_audio/input'
 out_path ='/Users/crisschan/workspace/PySpace/video_merge_audio/output'
 tmp_path = '/Users/crisschan/workspace/PySpace/video_merge_audio/tmp'
+
+
 # 获取输入的音频和视频文件
 df = DirAndFiles()
 audios = df.filesWithFilter(input_path,'.flac')
-# pics = df.filesWithFilter(input_path,'.png')
-
 
 
 
